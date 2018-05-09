@@ -7,8 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.time.LocalDate;
-
 /**
  * @author Chamith
  */
@@ -25,13 +23,13 @@ public class IndexController {
 
     @PostMapping("/user")
     public String create() {
-        User user = new User();
-        user.setName("Chamith Kodikara");
-        user.setAddress("Colombo");
-        user.setContactNo("0714948048");
-        user.setDateOfBirth(LocalDate.of(1993, 4, 20));
+//        User user = new User();
+//        user.setName("Chamith Kodikara");
+//        user.setAddress("Colombo");
+//        user.setContactNo("0714948048");
+//        user.setDateOfBirth(LocalDate.of(1993, 4, 20));
 //        user = userService.create(user);
-        return "User Added --- " + user;
+        return "User Added --- ";
     }
 
     @GetMapping("/user")

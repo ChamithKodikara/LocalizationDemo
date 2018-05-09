@@ -1,10 +1,13 @@
 package com.example.localization.demo.domain;
 
+import com.example.localization.demo.domain.localized.LocalizedUser;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.*;
-import java.time.LocalDate;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.Set;
 
 /**
  * @author Chamith
@@ -12,20 +15,12 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @Entity
-@Table(name = "user")
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
+    @OneToMany(mappedBy="container")
+    private Set<LocalizedUser> localizedUsers;
 
-    private String address;
-
-    private String contactNo;
-
-    private LocalDate dateOfBirth;
-
-    private Boolean active=Boolean.TRUE;
 }
